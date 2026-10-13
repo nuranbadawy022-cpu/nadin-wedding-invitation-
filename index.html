@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mohamed &amp; Nadine — Wedding Invitation</title>
+<meta name="theme-color" content="#2a0a10">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Great+Vibes&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="locked">
+
+<!-- 1. ENVELOPE -->
+<div id="envelope" role="dialog" aria-label="Wedding invitation envelope">
+  <div class="env-box">
+    <div class="env-part env-bottom"></div>
+    <div class="env-part env-flap"></div>
+    <div class="env-glow" aria-hidden="true"></div>
+    <button id="openBtn" class="env-btn" aria-label="Click to open the invitation"></button>
+  </div>
+</div>
+
+<!-- Music -->
+<audio id="bgMusic" loop preload="none"></audio>
+<button id="musicBtn" class="music-btn" aria-label="Play music" aria-pressed="false" hidden>
+  <svg class="ic-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+  <svg class="ic-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>
+</button>
+
+<main id="top">
+
+<!-- 2. CHILDHOOD PHOTO -->
+<section class="sec kids" aria-label="Childhood photo">
+  <img src="assets/childhood-bw.jpg" alt="Black and white photo of Mohamed and Nadine as babies, hugging">
+  <div class="kids-shade"></div>
+  <h2 class="kids-text reveal">These Kids Are Getting Married</h2>
+</section>
+
+<!-- 3. COVER -->
+<section class="sec cover" id="cover" aria-label="Cover">
+  <div class="stars" aria-hidden="true"></div>
+  <svg class="arches" viewBox="0 0 400 220" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+    <defs>
+      <linearGradient id="gv" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7a1218"/><stop offset="1" stop-color="#3a0509"/></linearGradient>
+      <linearGradient id="gw" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f3d9a8"/><stop offset="1" stop-color="#a9783a"/></linearGradient>
+    </defs>
+    <rect x="0" y="60" width="400" height="160" fill="url(#gw)" opacity=".9"/>
+    <path d="M160 60V40a40 40 0 0 1 80 0v20z" fill="url(#gw)"/>
+    <path d="M170 220V50a30 30 0 0 1 60 0v170z" fill="url(#gv)"/>
+    <g fill="url(#gv)">
+      <path d="M20 220V95a14 14 0 0 1 28 0v125z"/><path d="M62 220V95a14 14 0 0 1 28 0v125z"/><path d="M104 220V95a14 14 0 0 1 28 0v125z"/>
+      <path d="M268 220V95a14 14 0 0 1 28 0v125z"/><path d="M310 220V95a14 14 0 0 1 28 0v125z"/><path d="M352 220V95a14 14 0 0 1 28 0v125z"/>
+    </g>
+  </svg>
+  <div class="cover-fade" aria-hidden="true"></div>
+  <div class="cover-in">
+    <p class="eyebrow reveal">TOGETHER WITH THEIR FAMILIES</p>
+    <h1 class="names script reveal"><span data-bind="groom">Mohamed</span> <span class="amp">&amp;</span> <span data-bind="bride">Nadine</span></h1>
+    <div class="divider reveal" aria-hidden="true"><i></i><b></b><i></i></div>
+    <p class="date-line reveal" id="coverDate">15 JANUARY 2027</p>
+  </div>
+  <a href="#verse" class="scroll-ind" aria-label="Scroll down"><span>SCROLL</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 9l7 7 7-7" fill="none" stroke="currentColor" stroke-width="2"/></svg></a>
+</section>
+
+<!-- 4. VERSE -->
+<section class="sec ivory verse" id="verse" aria-label="Quranic verse">
+  <div class="frame reveal">
+    <p class="ar basmala" lang="ar" dir="rtl">بِسْمِ اللهِ الرَّحْمنِ الرَّحِيمِ</p>
+    <p class="ar ayah" lang="ar" dir="rtl">﴿ وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنْفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً إِنَّ فِي ذَٰلِكَ لَآيَاتٍ لِّقَوْمٍ يَتَفَكَّرُونَ ﴾</p>
+    <p class="ar sadaqa" lang="ar" dir="rtl">صدق الله العظيم</p>
+    <div class="divider gold" aria-hidden="true"><i></i><b></b><i></i></div>
+    <p class="trans">“And among His signs is that He created for you spouses from among yourselves so that you may find tranquility in them, and He placed between you affection and mercy.”</p>
+    <p class="ref">سورة الروم — آية ٢١</p>
+  </div>
+</section>
+
+<!-- 5. COUNTDOWN -->
+<section class="sec dark count" aria-label="Countdown">
+  <p class="eyebrow reveal">COUNTING DOWN TO OUR DAY</p>
+  <div class="cd reveal" id="countdown" role="timer" aria-live="off">
+    <div><span id="cdD">00</span><small>Days</small></div>
+    <div><span id="cdH">00</span><small>Hours</small></div>
+    <div><span id="cdM">00</span><small>Minutes</small></div>
+    <div><span id="cdS">00</span><small>Seconds</small></div>
+  </div>
+  <p class="cd-done" id="cdDone" hidden>Today is the day!</p>
+</section>
+
+<!-- 6. DETAILS -->
+<section class="sec ivory details" aria-label="Wedding details">
+  <h2 class="script sec-title reveal">Wedding Details</h2>
+  <div class="divider gold" aria-hidden="true"><i></i><b></b><i></i></div>
+  <dl class="cards">
+    <div class="card reveal"><dt>Date</dt><dd id="dDate">15 January 2027</dd></div>
+    <div class="card reveal"><dt>Time</dt><dd id="dTime" data-tba>To be announced</dd></div>
+    <div class="card reveal"><dt>Venue</dt><dd id="dVenue">Tolip Hotel Olympic International City</dd></div>
+    <div class="card reveal"><dt>Address</dt><dd id="dAddr" data-tba>To be announced</dd></div>
+    <div class="card reveal"><dt>Dress Code</dt><dd id="dDress" data-tba>To be announced</dd></div>
+  </dl>
+  <a id="mapsLink" class="btn" href="#" target="_blank" rel="noopener" hidden>View on Google Maps</a>
+</section>
+
+<!-- 7. RSVP -->
+<section class="sec dark rsvp" id="rsvp" aria-label="RSVP">
+  <h2 class="script sec-title reveal">RSVP</h2>
+  <p class="sub reveal">Kindly let us know if you can join us.</p>
+  <form id="rsvpForm" class="form reveal" novalidate>
+    <label for="gName">Your full name</label>
+    <input id="gName" name="name" type="text" autocomplete="name" maxlength="80" required>
+    <p class="err" id="eName" role="alert"></p>
+
+    <fieldset>
+      <legend>Will you attend?</legend>
+      <label class="radio"><input type="radio" name="attend" value="accept" checked><span>Joyfully Accept</span></label>
+      <label class="radio"><input type="radio" name="attend" value="decline"><span>Regretfully Decline</span></label>
+    </fieldset>
+
+    <div id="guestsWrap">
+      <label for="gCount">Number of guests (including you)</label>
+      <input id="gCount" name="guests" type="number" inputmode="numeric" min="1" max="10" value="1">
+      <p class="err" id="eCount" role="alert"></p>
+    </div>
+
+    <label for="gMsg">Message (optional)</label>
+    <textarea id="gMsg" name="message" rows="3" maxlength="300"></textarea>
+
+    <button type="submit" class="btn solid">Send via WhatsApp</button>
+    <p class="note" id="rsvpNote" role="status"></p>
+    <a id="waFallback" class="fallback" href="#" target="_blank" rel="noopener" hidden>WhatsApp didn’t open? Tap here</a>
+  </form>
+</section>
+
+<!-- 8. CLOSING -->
+<section class="sec ivory closing" aria-label="Closing">
+  <div class="divider gold" aria-hidden="true"><i></i><b></b><i></i></div>
+  <p class="script with-love reveal">With Love,</p>
+  <p class="script cl-names reveal"><span data-bind="groom">Mohamed</span> &amp; <span data-bind="bride">Nadine</span></p>
+  <p class="sentence reveal">Your presence is the most beautiful gift we could ask for.</p>
+  <div class="divider gold" aria-hidden="true"><i></i><b></b><i></i></div>
+  <button id="toTop" class="btn">Back to Top</button>
+</section>
+
+</main>
+<script src="script.js"></script>
+</body>
+</html>
